@@ -19,15 +19,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js" integrity="sha512-MOCpqoRoisCTwJ8vQQiciZv0qcpROCidek3GTFS6KTk2+y7munJIlKCVkFCYY+p3ErYFXCjmFjnfTTRSC1OHWQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.3/babel.min.js" integrity="sha512-MIXku7j6pJ0hqd2T4WXZMGerp3BU9B91rfLRDp/McDBNNdnwTD+yLJaz9AHcYXT6k16dYTkG9S2KRPGxaBIfBQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/babel">
-        function Titulo(){
+        function Titulo({children}){
             return(
-                <h1 className='form__titulo'>Login</h1>
+                <h1 className='form__titulo'>{children}</h1>
             )
         }
 
-        function Subtitulo() {
+        function Subtitulo({children}) {
             return (
-                <h2 className='form__texto'>Boas-vindas! Faça seu login.</h2>
+                <h2 className='form__texto'>{children}</h2>
             )
         }
 
@@ -40,9 +40,9 @@
             )
         }
 
-        function Botao(){
+        function Botao({children}){
             return(
-                <button type='submit' className="form__botao">Login</button>
+                <button type='submit' className="form__botao">{children}</button>
             )
         }
 
@@ -53,8 +53,8 @@
                     <img src='./img/imagem-login.png' alt='Mulher negra de cabelos crespos usando oculos e mexendo no computador'></img>
                     <section>
                         <form>
-                            <Titulo />
-                            <Subtitulo />
+                            <Titulo>Login</Titulo>
+                            <Subtitulo>Boas-vindas! Faça seu login.</Subtitulo>
                             <CampoDeDigitacao 
                                 tipo='email'
                                 label='E-mail ou usuário'
@@ -65,7 +65,7 @@
                                 label='Senha'
                                 placeholder='Digite o sua senha!'
                             />
-                            <Botao />
+                            <Botao>Login</Botao>
                         </form>    
                     </section>
                 </div>
